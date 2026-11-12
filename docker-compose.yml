@@ -1,0 +1,20 @@
+services:
+  naiah-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: naiah-agent
+    restart: unless-stopped
+    ports:
+      # Vincula à interface local (127.0.0.1) para que apenas o Nginx do CloudPanel acesse o app com SSL
+      - "127.0.0.1:8000:8000"
+    env_file:
+      - .env
+    volumes:
+      # Monta a pasta de conhecimento para permitir adicionar/atualizar PDFs sem reconstruir o container
+      - ./data:/app/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

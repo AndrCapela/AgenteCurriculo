@@ -1,0 +1,31 @@
+# Git
+.git/
+.gitignore
+
+# Ambientes virtuais e cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Segredos e variáveis locais (não incluir na imagem!)
+.env
+*.env
+
+# Chainlit
+.chainlit/.cache/
+.chainlit/translations/
+.files/
+
+# IDEs
+.vscode/
+.idea/
+
+# Documentações e assets locais não necessários na imagem
+DEPLOY.md
+README.md
+image.png
