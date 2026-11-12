@@ -6,8 +6,8 @@ services:
     container_name: naiah-agent
     restart: unless-stopped
     ports:
-      # Vincula à interface local (127.0.0.1) para que apenas o Nginx do CloudPanel acesse o app com SSL
-      - "127.0.0.1:8000:8000"
+      # Vincula à porta 4000 na interface local (127.0.0.1) para o CloudPanel (Nginx)
+      - "127.0.0.1:4000:8000"
     env_file:
       - .env
     volumes:

@@ -36,7 +36,7 @@ O **nip.io** é um serviço de DNS wildcard gratuito que dispensa configuraçõe
 3. Selecione a opção **Create a Reverse Proxy**.
 4. Preencha os campos:
    - **Domain Name**: `naiah.SEU_IP_VPS.nip.io` *(substitua pelo seu IP real)*
-   - **Reverse Proxy URL**: `http://127.0.0.1:8000`
+   - **Reverse Proxy URL**: `http://127.0.0.1:4000`
    - **Site User**: Escolha um usuário existente ou crie um (ex: `andre`).
 5. Clique em **Create**.
 
@@ -63,7 +63,7 @@ O **Chainlit** usa conexões WebSocket persistentes e streaming de tokens em tem
 
 ```nginx
 location / {
-    proxy_pass http://127.0.0.1:8000;
+    proxy_pass http://127.0.0.1:4000;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection "upgrade";
